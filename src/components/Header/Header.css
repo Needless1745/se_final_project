@@ -7,7 +7,15 @@
   background-position: center;
   background-repeat: no-repeat;
   background-attachment: fixed;
+  border-bottom: 1px solid #fff;
 }
 
-.header__logo {
+.home__btn {
+  background: none;
+  border: none;
+}
+
+.sign__in-btn {
+  background: none;
+  border: none;
 }
