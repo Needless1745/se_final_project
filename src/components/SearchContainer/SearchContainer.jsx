@@ -1,4 +1,5 @@
 import "./SearchContainer.css";
+import SearchForm from "../SearchForm/SearchForm";
 // main__search == msearch
 
 function SearchContainer() {
@@ -10,6 +11,8 @@ function SearchContainer() {
           Find the latest news on any topic and save them in your personal
           account.
         </p>
+
+        <SearchForm />
       </div>
     </section>
   );

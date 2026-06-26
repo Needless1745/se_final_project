@@ -1,11 +1,6 @@
 .main__search {
-  background-image: url("../../assets/backgroundimg.svg");
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
   display: flex;
-  flex-direction: column; /* Changed to column to stack content */
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   text-align: center;
