@@ -1,5 +1,15 @@
-.search__content {
-  max-width: 600px;
+.hero {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: relative;
+  z-index: 1;
+  align-items: center;
+  min-height: 560px;
+}
+
+.hero__content {
   z-index: 2;
   position: relative;
+  max-width: 600px;
 }

@@ -6,6 +6,12 @@
   height: 80px;
 }
 
+.header__right-side {
+  display: flex;
+  justify-content: space-between;
+  margin: auto;
+}
+
 .home__btn {
   background: white;
   border: none;
@@ -14,4 +20,9 @@
 .sign__in-btn {
   background: none;
   border: none;
+}
+
+.header__logo {
+  position: relative;
+  margin: 50px;
 }
