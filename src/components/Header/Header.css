@@ -3,26 +3,29 @@
   justify-content: space-between;
   align-items: center;
   border-bottom: 1px solid #fff;
-  height: 80px;
+  padding: 30px, 104px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.3);
 }
 
 .header__right-side {
   display: flex;
-  justify-content: space-between;
-  margin: auto;
+  align-items: center;
+  gap: 42px;
 }
 
 .home__btn {
-  background: white;
+  background: transparent;
   border: none;
+  cursor: pointer;
 }
 
 .sign__in-btn {
-  background: none;
+  background: transparent;
   border: none;
+
+  cursor: pointer;
 }
 
 .header__logo {
-  position: relative;
-  margin: 50px;
+  display: block;
 }

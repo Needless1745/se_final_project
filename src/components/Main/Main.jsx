@@ -1,12 +1,10 @@
 import "./Main.css";
-import SearchContainer from "../Hero/Hero";
-import Header from "../Header/Header";
+import Hero from "../Hero/Hero";
 
 function Main() {
   return (
     <main className="main">
-      <Header />
-      <SearchContainer />
+      <Hero />
     </main>
   );
 }
