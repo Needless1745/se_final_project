@@ -3,27 +3,20 @@
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
-  display: flex;
   flex-direction: column;
   position: relative;
   z-index: 1;
   align-items: center;
   justify-content: center;
-  text-align: center;
+
   min-height: 576px;
+  width: 100%;
 }
 
 .hero__content {
-  z-index: 2;
+  width: 100%;
   max-width: 1440px;
   margin: 0 auto;
-  position: relative;
-  max-width: 600px;
-}
-
-.hero__body {
-  max-width: 608px;
-  margin: 80px auto 0;
 }
 
 .hero__title {
@@ -33,6 +26,9 @@
   font-weight: 400;
   text-align: left;
   margin-bottom: 24px;
+  max-width: 608px;
+  margin-left: auto;
+  margin-right: auto;
   font-family: "Roboto-Slab", Arial, sans-serif;
 }
 
@@ -43,7 +39,10 @@
   font-family: "Roboto", Arial, sans-serif;
 }
 
-.hero__content {
-  max-width: 600px;
-  position: relative;
+.hero__subtitle,
+.search-form {
+  max-width: 608px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
 }

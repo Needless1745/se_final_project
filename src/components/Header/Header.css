@@ -2,9 +2,12 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  border-bottom: 1px solid #fff;
-  padding: 30px, 104px;
+  box-sizing: border-box;
   border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+  padding: 0 104px;
+  position: relative;
+  height: 80px;
+  width: 100%;
 }
 
 .header__right-side {
@@ -14,18 +17,21 @@
 }
 
 .home__btn {
+  color: white;
   background: transparent;
   border: none;
   cursor: pointer;
 }
 
 .sign__in-btn {
+  color: white;
   background: transparent;
-  border: none;
-
+  border-radius: 50%;
+  border-color: white;
   cursor: pointer;
 }
 
 .header__logo {
+  cursor: pointer;
   display: block;
 }
