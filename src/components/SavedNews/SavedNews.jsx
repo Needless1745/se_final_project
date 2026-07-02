@@ -1,5 +1,9 @@
 function SavedNews() {
-  return <div className="saved__news"></div>;
+  return (
+    <section className="saved__news">
+      <h2 className="saved__news-title">No articles yet</h2>
+    </section>
+  );
 }
 
 export default SavedNews;

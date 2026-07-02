@@ -44,6 +44,7 @@
   padding: 0 30px;
   cursor: pointer;
   height: 100%;
+  width: 168px;
 }
 
 .search__form-btn:hover {
