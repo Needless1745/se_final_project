@@ -3,36 +3,34 @@ import { useForm } from "../../hooks/useForm";
 import ModalWithForm from "../ModalWithForm/ModalWithForm";
 
 const defaultValues = {
-  name: "",
   email: "",
   password: "",
-  avatar: "",
 };
 
-const RegisterModal = ({ isOpen, onClose, onRegister, loginModalSwitch }) => {
+const LoginModal = ({ isOpen, onClose, onLogin, registerModalSwitch }) => {
   const { values, setValues, handleChange } = useForm(defaultValues);
 
   useEffect(() => {
     if (!isOpen) {
-      setValues(defaultValues, {}, true);
+      setValues(defaultValues);
     }
   }, [isOpen]);
 
   function handleSubmit(evt) {
     evt.preventDefault();
-    onRegister(values);
+    onLogin(values);
   }
 
   return (
     <ModalWithForm
-      title="Sign up"
-      name="register"
-      buttonText="Sign up"
+      title="Log in"
+      name="login"
+      buttonText="Log in"
       isOpen={isOpen}
       onClose={onClose}
       onSubmit={handleSubmit}
-      altBtnText="or Log in"
-      onAltBtnClick={loginModalSwitch}
+      altBtnText={"or Sign up"}
+      onAltBtnClick={registerModalSwitch}
     >
       <label className="modal__label">
         Email
@@ -57,20 +55,8 @@ const RegisterModal = ({ isOpen, onClose, onRegister, loginModalSwitch }) => {
           required
         />
       </label>
-
-      <label className="modal__label">
-        Username
-        <input
-          className="modal__input"
-          type="text"
-          name="name"
-          value={values.name}
-          onChange={handleChange}
-          required
-        />
-      </label>
     </ModalWithForm>
   );
 };
 
-export default RegisterModal;
+export default LoginModal;

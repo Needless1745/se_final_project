@@ -1,10 +1,10 @@
 import "./Main.css";
 import Hero from "../Hero/Hero";
 
-function Main() {
+function Main({ handleLoginClick }) {
   return (
     <main className="main">
-      <Hero />
+      <Hero handleLoginClick={handleLoginClick} />
     </main>
   );
 }
