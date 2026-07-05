@@ -9,7 +9,8 @@ function ModalWithForm({
   children,
   onSubmit,
   altBtnText,
-  buttonText = "or sign up",
+  buttonText = "",
+  buttonClassName = "",
   onAltBtnClick,
 }) {
   return (
@@ -27,13 +28,18 @@ function ModalWithForm({
         <form onSubmit={onSubmit} className="modal__form" name={name}>
           {children}
           <div className="modal__actions">
-            <button type="submit" className="modal__submit">
-              {buttonText}
-            </button>
+            {buttonText && (
+              <button
+                type="submit"
+                className="modal__submit ${buttonClassName}"
+              >
+                {buttonText}
+              </button>
+            )}
             {altBtnText && (
               <button
                 type="button"
-                className="modal__alt-btn"
+                className="modal__alt-btn modal__alt-btn_type_success"
                 onClick={onAltBtnClick}
               >
                 {altBtnText}

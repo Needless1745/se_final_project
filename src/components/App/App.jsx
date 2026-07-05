@@ -1,12 +1,14 @@
+import "./App.css";
+import { useState } from "react";
+import { Route, Routes } from "react-router-dom";
+
 import Main from "../Main/Main";
 import About from "../About/About";
 import LoginModal from "../LoginModal/LoginModal";
 import RegisterModal from "../RegisterModal/RegisterModal";
-import Footer from "../Footer/Footer";
+import SuccessModal from "../SuccessModal/SuccessModal";
 import SavedNews from "../SavedNews/SavedNews";
-import "./App.css";
-import { useState } from "react";
-import { Route, Routes } from "react-router-dom";
+import Footer from "../Footer/Footer";
 
 function App() {
   const [activeModal, setActiveModal] = useState("");
@@ -16,10 +18,12 @@ function App() {
   };
 
   const handleRegister = () => {
-    setActiveModal("");
+    console.log("register success!");
+    setActiveModal("registration-success");
   };
 
   const loginModalSwitch = () => {
+    console.log("Switching to login...");
     setActiveModal("login");
   };
 
@@ -29,8 +33,15 @@ function App() {
   };
 
   const registerModalSwitch = () => {
+    console.log("Switching to register...");
     setActiveModal("register");
   };
+
+  const signinModal = (evt) => {
+    evt.preventDefault();
+    setActiveModal("login");
+  };
+
   console.log(activeModal);
   return (
     <div className="page">
@@ -61,6 +72,11 @@ function App() {
         onClose={closeActiveModal}
         onRegister={handleRegister}
         loginModalSwitch={loginModalSwitch}
+      />
+      <SuccessModal
+        isOpen={activeModal === "registration-success"}
+        onClose={closeActiveModal}
+        signinModal={signinModal}
       />
     </div>
   );
