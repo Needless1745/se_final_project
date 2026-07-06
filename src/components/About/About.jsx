@@ -10,7 +10,11 @@ function About() {
         </div>
         <div className="about__text-cntnr">
           <h2 className="about__title">About the author</h2>
-          <p className="about__text">My name jeff</p>
+          <p className="about__text">
+            My name is Jose and this is the frontend of my final project for
+            Tripleten. This project helps with obtaining news articles via an
+            API that users are then able to save in their own profiles.
+          </p>
         </div>
       </div>
     </section>

@@ -1,5 +1,5 @@
 import "./App.css";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Route, Routes } from "react-router-dom";
 
 import Main from "../Main/Main";
@@ -7,12 +7,34 @@ import About from "../About/About";
 import LoginModal from "../LoginModal/LoginModal";
 import RegisterModal from "../RegisterModal/RegisterModal";
 import SuccessModal from "../SuccessModal/SuccessModal";
+import getNews from "../../utils/newsApi";
 import SavedNews from "../SavedNews/SavedNews";
 import Footer from "../Footer/Footer";
 
 function App() {
+  // useEffect(() => {
+  //   getNews("react")
+  //     .then((data) => {
+  //       // console.log(data.articles[1]);
+  //     })
+  //     .catch(console.error);
+  // }, []);
+
   const [activeModal, setActiveModal] = useState("");
+  const [articles, setArticles] = useState([]);
   const closeActiveModal = () => setActiveModal("");
+
+  function handleSearch(query) {
+    console.log(query);
+
+    getNews(query)
+      .then((data) => {
+        console.log(data.articles);
+        setArticles(data.articles);
+      })
+      .catch(console.error);
+  }
+
   const handleLogin = () => {
     console.log("login succesful!");
   };
@@ -51,7 +73,11 @@ function App() {
             path="/"
             element={
               <>
-                <Main handleLoginClick={handleLoginClick} />
+                <Main
+                  // articles={articles}
+                  handleLoginClick={handleLoginClick}
+                  onSearch={handleSearch}
+                />
                 <About />
               </>
             }

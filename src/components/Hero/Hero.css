@@ -3,46 +3,32 @@
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
-  flex-direction: column;
-  position: relative;
-  z-index: 1;
-  align-items: center;
-  justify-content: center;
-
   min-height: 576px;
-  width: 100%;
 }
 
 .hero__content {
-  width: 100%;
-  max-width: 1440px;
-  margin: 0 auto;
+  color: white;
+  font-family: "Roboto", Arial, sans-serif;
+  max-width: 608px;
+  margin: 80px auto 0;
 }
 
 .hero__title {
-  color: white;
-  line-height: 64px;
-  font-size: 60px;
-  font-weight: 400;
+  font-family: "Roboto-slab", Arial, sans-serif;
+  margin-bottom: 32px;
   text-align: left;
-  margin-bottom: 24px;
-  max-width: 608px;
-  margin-left: auto;
-  margin-right: auto;
-  font-family: "Roboto-Slab", Arial, sans-serif;
+  font-weight: 400;
+  font-size: 60px;
+  line-height: 64px;
+  letter-spacing: 0px;
 }
 
 .hero__subtitle {
-  color: white;
-  line-height: 24px;
+  margin-bottom: 64px;
+  text-align: left;
+  font-family: Roboto;
+  font-weight: 400;
   font-size: 18px;
-  font-family: "Roboto", Arial, sans-serif;
-}
-
-.hero__subtitle,
-.search-form {
-  max-width: 608px;
-  margin-left: auto;
-  margin-right: auto;
-  text-align: center;
+  line-height: 24px;
+  letter-spacing: 0px;
 }

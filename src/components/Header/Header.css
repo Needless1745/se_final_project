@@ -2,6 +2,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  font-family: "Roboto", Arial, sans-serif;
   box-sizing: border-box;
   border-bottom: 1px solid rgba(255, 255, 255, 0.3);
   padding: 0 104px;
@@ -24,14 +25,28 @@
 }
 
 .sign__in-btn {
-  color: white;
+  height: 48px;
+  min-width: 176px;
+  padding: 0 16px;
+
   background: transparent;
-  border-radius: 50%;
-  border-color: white;
+  border: 1px solid #fff;
+  border-radius: 100px;
+
+  color: #fff;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 24px;
+
   cursor: pointer;
+  transition: background-color 0.2s ease;
 }
 
 .header__logo {
   cursor: pointer;
   display: block;
+}
+
+.sign__in-btn:hover {
+  background-color: rgba(255, 255, 255, 0.1);
 }
