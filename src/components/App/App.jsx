@@ -22,17 +22,20 @@ function App() {
 
   const [activeModal, setActiveModal] = useState("");
   const [articles, setArticles] = useState([]);
+  const [isLoading, setIsLoading] = useState([]);
   const closeActiveModal = () => setActiveModal("");
 
   function handleSearch(query) {
-    console.log(query);
+    setIsLoading(true);
 
     getNews(query)
       .then((data) => {
-        console.log(data.articles);
         setArticles(data.articles);
       })
-      .catch(console.error);
+      .catch(console.error)
+      .finally(() => {
+        setIsLoading(false);
+      });
   }
 
   const handleLogin = () => {
@@ -74,9 +77,10 @@ function App() {
             element={
               <>
                 <Main
-                  // articles={articles}
+                  articles={articles}
                   handleLoginClick={handleLoginClick}
                   onSearch={handleSearch}
+                  isLoading={isLoading}
                 />
                 <About />
               </>
