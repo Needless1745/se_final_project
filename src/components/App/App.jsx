@@ -24,7 +24,7 @@ function App() {
 
     getNews(query)
       .then((data) => {
-        console.log(data.articles);
+        // console.log(data.articles);
         setArticles(data.articles);
       })
       .catch(console.error)

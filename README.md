@@ -31,3 +31,8 @@ This project was built as my final frontend project for the TripleTen Software E
 ## What I Learned
 
 Building NewsExplorer strengthened my understanding of React and component architecture. I gained experience working with asynchronous API requests, managing application state with hooks, building reusable components, and translating a Figma design into a responsive, production-style interface. It also reinforced best practices for organizing a scalable frontend project using Vite and Git.
+
+## Project Pitch Video
+
+Check out [this video](https://www.loom.com/share/31cfe93fe6344575844031976666fe68), where I describe my
+project and some challenges I faced while building it.
