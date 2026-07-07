@@ -11,7 +11,7 @@ function ModalWithForm({
   onSubmit,
   altBtnText,
   buttonText = "",
-  buttonClassName = "",
+
   onAltBtnClick,
 }) {
   useEffect(() => {

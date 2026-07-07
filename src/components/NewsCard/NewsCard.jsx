@@ -8,10 +8,14 @@ function NewsCard({
   publishedAt,
   title,
   source,
-  keyword,
 }) {
   return (
-    <article className="news-card">
+    <a
+      href={url}
+      target="_blank"
+      rel="noopener noreferrer"
+      className="news-card"
+    >
       <img src={urlToImage} alt={title} className="news-card__img" />
       <div className="news-card__content">
         <p className="news-card__date">{formatDate(publishedAt)}</p>
@@ -19,7 +23,7 @@ function NewsCard({
         <p className="news-card__desc">{description}</p>
         <p className="news-card__publisher">{source.name}</p>
       </div>
-    </article>
+    </a>
   );
 }
 export default NewsCard;

@@ -6,7 +6,9 @@ function Header({ handleLoginClick }) {
     <header className="header">
       <img src={logo} alt="NewsExplorer logo" className="header__logo" />
       <nav className="header__right-side">
-        <button className="home__btn">Home</button>
+        <a href="/" className="home__btn">
+          Home
+        </a>
         <button
           className="sign__in-btn"
           type="button"

@@ -22,22 +22,20 @@
   background: transparent;
   border: none;
   cursor: pointer;
+  text-decoration: none;
 }
 
 .sign__in-btn {
   height: 48px;
   min-width: 176px;
   padding: 0 16px;
-
   background: transparent;
   border: 1px solid #fff;
   border-radius: 100px;
-
   color: #fff;
   font-size: 18px;
   font-weight: 500;
   line-height: 24px;
-
   cursor: pointer;
   transition: background-color 0.2s ease;
 }

@@ -1,19 +1,23 @@
-import pfp from "../../assets/Cyberpunkpfp.png";
+import pfp from "../../assets/Pfp.jpeg";
 import "./About.css";
 
 function About() {
   return (
     <section className="about">
-      <div className="about__content">
-        <div className="about__img-cntnr">
-          <img src={pfp} alt="" className="about__img" />
+      <div className="about__container">
+        <div className="about__image-container">
+          <img src={pfp} alt="" className="about__image" />
         </div>
-        <div className="about__text-cntnr">
+        <div className="about__content">
           <h2 className="about__title">About the author</h2>
           <p className="about__text">
-            My name is Jose and this is the frontend of my final project for
-            Tripleten. This project helps with obtaining news articles via an
-            API that users are then able to save in their own profiles.
+            Hi, I'm Jose, a Software Engineer in training at TripleTen. I built
+            NewsExplorer as my final frontend project to practice working with
+            React, APIs, and responsive layouts. Building this application
+            helped me become more comfortable managing application state,
+            fetching external data, and turning a Figma design into a polished
+            user experience. I'm excited to continue growing as a developer and
+            apply these skills to real-world projects.
           </p>
         </div>
       </div>
