@@ -12,24 +12,19 @@ import SavedNews from "../SavedNews/SavedNews";
 import Footer from "../Footer/Footer";
 
 function App() {
-  // useEffect(() => {
-  //   getNews("react")
-  //     .then((data) => {
-  //       // console.log(data.articles[1]);
-  //     })
-  //     .catch(console.error);
-  // }, []);
-
   const [activeModal, setActiveModal] = useState("");
   const [articles, setArticles] = useState([]);
-  const [isLoading, setIsLoading] = useState([]);
+  const [visibleCards, setVisibleCards] = useState(3);
+  const [isLoading, setIsLoading] = useState(false);
   const closeActiveModal = () => setActiveModal("");
 
   function handleSearch(query) {
+    setVisibleCards(3);
     setIsLoading(true);
 
     getNews(query)
       .then((data) => {
+        console.log(data.articles);
         setArticles(data.articles);
       })
       .catch(console.error)
@@ -38,27 +33,31 @@ function App() {
       });
   }
 
+  const handleShowMore = () => {
+    setVisibleCards((prev) => prev + 3);
+  };
+
   const handleLogin = () => {
-    console.log("login succesful!");
+    // console.log("login succesful!");
   };
 
   const handleRegister = () => {
-    console.log("register success!");
+    // console.log("register success!");
     setActiveModal("registration-success");
   };
 
   const loginModalSwitch = () => {
-    console.log("Switching to login...");
+    // console.log("Switching to login...");
     setActiveModal("login");
   };
 
   const handleLoginClick = () => {
-    console.log("opening login modal...");
+    // console.log("opening login modal...");
     setActiveModal("login");
   };
 
   const registerModalSwitch = () => {
-    console.log("Switching to register...");
+    // console.log("Switching to register...");
     setActiveModal("register");
   };
 
@@ -67,7 +66,7 @@ function App() {
     setActiveModal("login");
   };
 
-  console.log(activeModal);
+  // console.log(activeModal);
   return (
     <div className="page">
       <div className="page__content">
@@ -81,6 +80,8 @@ function App() {
                   handleLoginClick={handleLoginClick}
                   onSearch={handleSearch}
                   isLoading={isLoading}
+                  visibleCards={visibleCards}
+                  handleShowMore={handleShowMore}
                 />
                 <About />
               </>

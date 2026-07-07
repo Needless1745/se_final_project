@@ -3,7 +3,14 @@ import Hero from "../Hero/Hero";
 import SearchResults from "../SearchResults/SearchResults";
 import Preloader from "../Preloader/Preloader";
 
-function Main({ handleLoginClick, onSearch, articles, isLoading }) {
+function Main({
+  handleLoginClick,
+  onSearch,
+  articles,
+  isLoading,
+  visibleCards,
+  handleShowMore,
+}) {
   return (
     <main className="main">
       <Hero handleLoginClick={handleLoginClick} onSearch={onSearch} />
@@ -11,7 +18,11 @@ function Main({ handleLoginClick, onSearch, articles, isLoading }) {
       {isLoading && <Preloader />}
 
       {!isLoading && articles.length > 0 && (
-        <SearchResults articles={articles} />
+        <SearchResults
+          articles={articles}
+          visibleCards={visibleCards}
+          onShowMore={handleShowMore}
+        />
       )}
     </main>
   );

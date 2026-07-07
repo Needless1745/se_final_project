@@ -1,18 +1,23 @@
+import "./SearchResults.css";
 import NewsCard from "../NewsCard/NewsCard";
 
-function SearchResults({ articles }) {
+function SearchResults({ articles, visibleCards, onShowMore }) {
   return (
-    <section className="search__results">
-      <h2 className="search__results-title">Search results</h2>
-      <div className="search__Results-grid">
-        {articles.map((article) => (
-          <NewsCard key={article.url} {...article} />
-        ))}
-      </div>
+    <section className="search-results">
+      <div className="search-results__container">
+        <h2 className="search-results__title">Search results</h2>
+        <div className="search-results__grid">
+          {articles.slice(0, visibleCards).map((article) => (
+            <NewsCard key={article.url} {...article} />
+          ))}
+        </div>
 
-      <button type="button" className="search__results-more-btn">
-        Show more
-      </button>
+        {visibleCards < articles.length && (
+          <button className="search-results__more-btn" onClick={onShowMore}>
+            Show more
+          </button>
+        )}
+      </div>
     </section>
   );
 }

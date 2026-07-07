@@ -1,3 +1,6 @@
+import "./NewsCard.css";
+import { formatDate } from "../../utils/dateFormat";
+
 function NewsCard({
   urlToImage,
   url,
@@ -8,13 +11,13 @@ function NewsCard({
   keyword,
 }) {
   return (
-    <article className="news__card">
-      <img src={urlToImage} alt={title} className="news__card-img" />
-      <div className="news__card-content">
-        <p className="news__card-date">{publishedAt}</p>
-        <h3 className="news__card-title">{title}</h3>
-        <p className="news__card-desc">{description}</p>
-        <p className="news__card-publisher">{source.name}</p>
+    <article className="news-card">
+      <img src={urlToImage} alt={title} className="news-card__img" />
+      <div className="news-card__content">
+        <p className="news-card__date">{formatDate(publishedAt)}</p>
+        <h3 className="news-card__title">{title}</h3>
+        <p className="news-card__desc">{description}</p>
+        <p className="news-card__publisher">{source.name}</p>
       </div>
     </article>
   );

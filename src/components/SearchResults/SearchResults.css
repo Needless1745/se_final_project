@@ -1,0 +1,42 @@
+.search-results {
+  background: #f5f6f7;
+  padding: 80px 40px;
+}
+
+.search-results__container {
+  max-width: 1232px;
+  margin: 0 auto;
+}
+
+.search-results__title {
+  margin: 0 0 64px;
+  font-family: "Roboto-Slab", Arial, sans-serif;
+  font-size: 40px;
+  font-weight: 400;
+  line-height: 46px;
+}
+
+.search-results__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+
+.search-results__more-btn {
+  font-family: "Roboto", Arial, sans-serif;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 24px;
+  background-color: #ffffff;
+  border: transparent;
+  cursor: pointer;
+  border-radius: 80px;
+  width: 288px;
+  height: 64px;
+  display: block;
+  margin: 64px auto 0;
+}
+
+.search-results__more-btn:hover {
+  background-color: #e8e8e8;
+}
