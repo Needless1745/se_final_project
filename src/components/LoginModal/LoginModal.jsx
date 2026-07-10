@@ -14,7 +14,7 @@ const LoginModal = ({ isOpen, onClose, onLogin, registerModalSwitch }) => {
     if (!isOpen) {
       setValues(defaultValues);
     }
-  }, [isOpen]);
+  }, [isOpen, setValues]);
 
   function handleSubmit(evt) {
     evt.preventDefault();
@@ -29,7 +29,7 @@ const LoginModal = ({ isOpen, onClose, onLogin, registerModalSwitch }) => {
       isOpen={isOpen}
       onClose={onClose}
       onSubmit={handleSubmit}
-      altBtnText={"or Sign up"}
+      altBtnText={"Sign up"}
       onAltBtnClick={registerModalSwitch}
     >
       <label className="modal__label">
@@ -40,6 +40,7 @@ const LoginModal = ({ isOpen, onClose, onLogin, registerModalSwitch }) => {
           name="email"
           value={values.email}
           onChange={handleChange}
+          placeholder="Enter Email"
           required
         />
       </label>
@@ -53,6 +54,7 @@ const LoginModal = ({ isOpen, onClose, onLogin, registerModalSwitch }) => {
           value={values.password}
           onChange={handleChange}
           required
+          placeholder="Enter Password"
         />
       </label>
     </ModalWithForm>

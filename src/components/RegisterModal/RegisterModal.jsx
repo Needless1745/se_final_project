@@ -16,7 +16,7 @@ const RegisterModal = ({ isOpen, onClose, onRegister, loginModalSwitch }) => {
     if (!isOpen) {
       setValues(defaultValues, {}, true);
     }
-  }, [isOpen]);
+  }, [isOpen, setValues]);
 
   function handleSubmit(evt) {
     evt.preventDefault();
@@ -31,7 +31,7 @@ const RegisterModal = ({ isOpen, onClose, onRegister, loginModalSwitch }) => {
       isOpen={isOpen}
       onClose={onClose}
       onSubmit={handleSubmit}
-      altBtnText="or Log in"
+      altBtnText="Log in"
       onAltBtnClick={loginModalSwitch}
     >
       <label className="modal__label">
@@ -42,6 +42,7 @@ const RegisterModal = ({ isOpen, onClose, onRegister, loginModalSwitch }) => {
           name="email"
           value={values.email}
           onChange={handleChange}
+          placeholder="Enter Email"
           required
         />
       </label>
@@ -54,6 +55,7 @@ const RegisterModal = ({ isOpen, onClose, onRegister, loginModalSwitch }) => {
           name="password"
           value={values.password}
           onChange={handleChange}
+          placeholder="Enter Password"
           required
         />
       </label>
@@ -66,6 +68,7 @@ const RegisterModal = ({ isOpen, onClose, onRegister, loginModalSwitch }) => {
           name="name"
           value={values.name}
           onChange={handleChange}
+          placeholder="Enter a Username"
           required
         />
       </label>

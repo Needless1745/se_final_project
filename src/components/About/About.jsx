@@ -11,13 +11,14 @@ function About() {
         <div className="about__content">
           <h2 className="about__title">About the author</h2>
           <p className="about__text">
-            Hi, I'm Jose, a Software Engineer in training at TripleTen. I built
-            NewsExplorer as my final frontend project to practice working with
-            React, APIs, and responsive layouts. Building this application
-            helped me become more comfortable managing application state,
-            fetching external data, and turning a Figma design into a polished
-            user experience. I'm excited to continue growing as a developer and
-            apply these skills to real-world projects.
+            Hi, My name is Jose, I am a Software Engineer in training at
+            TripleTen. I built NewsExplorer as my final frontend project to
+            practice working with React, APIs, and responsive layouts. Building
+            this application helped me become more comfortable managing
+            application state, fetching external data, and turning a Figma
+            design into a polished user experience. I am excited to continue
+            growing as a developer and apply these skills to real-world
+            projects.
           </p>
         </div>
       </div>

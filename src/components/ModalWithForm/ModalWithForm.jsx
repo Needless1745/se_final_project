@@ -47,14 +47,28 @@ function ModalWithForm({
           {children}
           <div className="modal__actions">
             {buttonText && (
-              <button
-                type="submit"
-                className="modal__submit ${buttonClassName}"
-              >
+              <button type="submit" className="modal__submit">
                 {buttonText}
               </button>
             )}
-            {altBtnText && (
+          </div>
+
+          {altBtnText && name !== "registration-success" && (
+            <div className="modal__switch">
+              <span className="modal__alt-text">or</span>
+
+              <button
+                type="button"
+                className="modal__alt-btn"
+                onClick={onAltBtnClick}
+              >
+                {altBtnText}
+              </button>
+            </div>
+          )}
+
+          {name === "registration-success" && (
+            <div className="modal__success-actions">
               <button
                 type="button"
                 className="modal__alt-btn modal__alt-btn_type_success"
@@ -62,8 +76,8 @@ function ModalWithForm({
               >
                 {altBtnText}
               </button>
-            )}
-          </div>
+            </div>
+          )}
         </form>
       </div>
     </div>
