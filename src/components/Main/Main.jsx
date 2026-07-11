@@ -10,10 +10,17 @@ function Main({
   isLoading,
   visibleCards,
   handleShowMore,
+  isloggedin,
+  currentUser,
 }) {
   return (
     <main className="main">
-      <Hero handleLoginClick={handleLoginClick} onSearch={onSearch} />
+      <Hero
+        handleLoginClick={handleLoginClick}
+        onSearch={onSearch}
+        isloggedin={isloggedin}
+        currentUser={currentUser}
+      />
 
       {isLoading && <Preloader />}
 

@@ -4,12 +4,9 @@
   display: flex;
   justify-content: center;
   align-items: center;
-
   background: rgba(0, 0, 0, 0.5);
-
   visibility: hidden;
   opacity: 0;
-
   transition:
     opacity 0.3s ease,
     visibility 0.3s ease;
@@ -169,10 +166,6 @@
   cursor: pointer;
   padding: 0;
   line-height: inherit;
-}
-
-.modal__alt-btn_type_success {
-  margin-top: 24px;
 }
 
 .modal__alt-btn:hover {

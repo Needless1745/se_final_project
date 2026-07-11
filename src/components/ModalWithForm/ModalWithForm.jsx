@@ -71,7 +71,7 @@ function ModalWithForm({
             <div className="modal__success-actions">
               <button
                 type="button"
-                className="modal__alt-btn modal__alt-btn_type_success"
+                className="modal__alt-btn_type_success"
                 onClick={onAltBtnClick}
               >
                 {altBtnText}

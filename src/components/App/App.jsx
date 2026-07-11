@@ -16,6 +16,8 @@ function App() {
   const [articles, setArticles] = useState([]);
   const [visibleCards, setVisibleCards] = useState(3);
   const [isLoading, setIsLoading] = useState(false);
+  const [isloggedin, setisloggedin] = useState(false);
+  const [currentUser, setCurrentUser] = useState([]);
   const closeActiveModal = () => setActiveModal("");
 
   function handleSearch(query) {
@@ -38,7 +40,16 @@ function App() {
   };
 
   const handleLogin = () => {
-    // console.log("login succesful!");
+    console.log("Before:", isloggedin);
+
+    closeActiveModal();
+    setisloggedin(true);
+
+    console.log("After setState called");
+
+    setCurrentUser({
+      name: "Elise",
+    });
   };
 
   const handleRegister = () => {
@@ -82,6 +93,8 @@ function App() {
                   isLoading={isLoading}
                   visibleCards={visibleCards}
                   handleShowMore={handleShowMore}
+                  isloggedin={isloggedin}
+                  currentUser={currentUser}
                 />
                 <About />
               </>
