@@ -3,6 +3,7 @@
   justify-content: space-between;
   align-items: center;
   font-family: "Roboto", Arial, sans-serif;
+  font-size: 18px;
   box-sizing: border-box;
   border-bottom: 1px solid rgba(255, 255, 255, 0.3);
   padding: 0 104px;
@@ -18,11 +19,24 @@
 }
 
 .home__btn {
+  position: relative;
   color: white;
   background: transparent;
   border: none;
   cursor: pointer;
   text-decoration: none;
+}
+
+.saved__articles-btn {
+  text-decoration: none;
+  color: #b6bcbf;
+  font-family: inherit;
+  cursor: pointer;
+  transition: background-color 0.5s ease;
+}
+
+.saved__articles-btn:hover {
+  color: #fff;
 }
 
 .sign__in-btn {
@@ -47,4 +61,54 @@
 
 .sign__in-btn:hover {
   background-color: rgba(255, 255, 255, 0.1);
+}
+
+.logout__btn {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  gap: 8px;
+  border-radius: 100px;
+  height: 48px;
+  width: 112px;
+  background: transparent;
+  border: 1px solid white;
+  color: white;
+  font-style: "Roboto", Arial, sans-serif;
+  font-weight: 500;
+  line-height: 24px;
+  font-size: 18px;
+}
+
+.header_saved {
+  color: #1a1b22;
+  border-bottom: 1px solid #d1d2d6;
+}
+
+.header_saved .header__logo {
+  filter: brightness(0);
+}
+
+.header_saved .home__btn,
+.header_saved .saved__articles-btn {
+  color: #1a1b22;
+}
+
+.header_saved .logout__btn {
+  color: #1a1b22;
+  border-color: #1a1b22;
+}
+
+.header__link_active {
+  position: relative;
+}
+
+.header__link_active::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -31px;
+  width: 100%;
+  height: 3px;
+  border-bottom: 3px solid currentColor;
 }

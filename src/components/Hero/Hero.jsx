@@ -2,10 +2,17 @@ import "./Hero.css";
 import SearchForm from "../SearchForm/SearchForm";
 import Header from "../Header/Header";
 
-function Hero({ handleLoginClick, onSearch, isloggedin, currentUser }) {
+function Hero({
+  handleLoginClick,
+  onSearch,
+  isloggedin,
+  currentUser,
+  variant,
+}) {
   return (
     <section className="hero">
       <Header
+        variant="home"
         handleLoginClick={handleLoginClick}
         isloggedin={isloggedin}
         currentUser={currentUser}

@@ -1,5 +1,5 @@
 import "./App.css";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Route, Routes } from "react-router-dom";
 
 import Main from "../Main/Main";
@@ -17,7 +17,7 @@ function App() {
   const [visibleCards, setVisibleCards] = useState(3);
   const [isLoading, setIsLoading] = useState(false);
   const [isloggedin, setisloggedin] = useState(false);
-  const [currentUser, setCurrentUser] = useState([]);
+  const [currentUser, setCurrentUser] = useState({});
   const closeActiveModal = () => setActiveModal("");
 
   function handleSearch(query) {
@@ -26,7 +26,6 @@ function App() {
 
     getNews(query)
       .then((data) => {
-        // console.log(data.articles);
         setArticles(data.articles);
       })
       .catch(console.error)
@@ -39,36 +38,28 @@ function App() {
     setVisibleCards((prev) => prev + 3);
   };
 
-  const handleLogin = () => {
-    console.log("Before:", isloggedin);
-
+  const handleLogin = ({ email }) => {
     closeActiveModal();
     setisloggedin(true);
+    const username = email.split("@")[0];
+    const formattedName = username.charAt(0).toUpperCase() + username.slice(1);
 
-    console.log("After setState called");
-
-    setCurrentUser({
-      name: "Elise",
-    });
+    setCurrentUser({ name: formattedName });
   };
 
   const handleRegister = () => {
-    // console.log("register success!");
     setActiveModal("registration-success");
   };
 
   const loginModalSwitch = () => {
-    // console.log("Switching to login...");
     setActiveModal("login");
   };
 
   const handleLoginClick = () => {
-    // console.log("opening login modal...");
     setActiveModal("login");
   };
 
   const registerModalSwitch = () => {
-    // console.log("Switching to register...");
     setActiveModal("register");
   };
 
@@ -77,7 +68,6 @@ function App() {
     setActiveModal("login");
   };
 
-  // console.log(activeModal);
   return (
     <div className="page">
       <div className="page__content">
@@ -100,7 +90,16 @@ function App() {
               </>
             }
           />
-          <Route path="/saved-news" element={<SavedNews />} />
+          <Route
+            path="/saved-news"
+            element={
+              <SavedNews
+                isloggedin={isloggedin}
+                currentUser={currentUser}
+                handleLoginClick={handleLoginClick}
+              />
+            }
+          />
         </Routes>
         <Footer />
       </div>

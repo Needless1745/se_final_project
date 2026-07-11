@@ -29,6 +29,8 @@ function Main({
           articles={articles}
           visibleCards={visibleCards}
           onShowMore={handleShowMore}
+          isloggedin={isloggedin}
+          handleLoginClick={handleLoginClick}
         />
       )}
     </main>

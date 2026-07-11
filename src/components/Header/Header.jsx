@@ -1,26 +1,45 @@
 import "./Header.css";
 import logo from "../../assets/logo.svg";
+import logoutWhite from "../../assets/logoutW.svg";
+import logoutBlack from "../../assets/logoutBlack.svg";
 import { Link } from "react-router-dom";
 
-function Header({ isloggedin, currentUser, handleLoginClick }) {
-  console.log("Header isLoggedIn:", isloggedin);
+function Header({ isloggedin, currentUser, handleLoginClick, variant }) {
   return (
-    <header className="header">
-      <img src={logo} alt="NewsExplorer logo" className="header__logo" />
+    <header className={`header ${variant === "saved" ? "header_saved" : ""}`}>
+      <Link
+        to="/"
+        className="header__logo-link
+      "
+      >
+        <img src={logo} alt="NewsExplorer logo" className="header__logo" />
+      </Link>
 
       <nav className="header__right-side">
-        <Link to="/" className="home__btn">
+        <Link
+          to="/"
+          className={`home__btn ${variant === "home" ? "header__link_active" : ""}`}
+        >
           Home
         </Link>
 
         {isloggedin ? (
           <>
-            <Link to="/saved-news" className="saved__articles-btn">
+            <Link
+              to="/saved-news"
+              className={`saved__articles-btn ${variant === "saved" ? "header__link_active" : ""}`}
+            >
               Saved articles
             </Link>
 
             <button className="logout__btn" type="button">
-              {currentUser?.name}
+              {currentUser?.name || "Elise"}
+              <img
+                src={variant === "saved" ? logoutBlack : logoutWhite}
+                alt=""
+                aria-hidden="true"
+                className="logout__logo"
+              />
             </button>
           </>
         ) : (

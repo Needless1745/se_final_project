@@ -11,6 +11,8 @@ function NewsCard({
   publishedAt,
   title,
   source,
+  isloggedin,
+  handleLoginClick,
 }) {
   const [isSaved, setIsSaved] = useState(false);
 
@@ -26,17 +28,22 @@ function NewsCard({
         <img src={urlToImage} alt={title} className="news-card__img" />
       </a>
 
-      <button
-        className="news-card__bookmark"
-        type="button"
-        onClick={handleBookmarkClick}
-      >
-        <img
-          src={isSaved ? bookmarkClicked : bookmarkIcon}
-          alt="Save article"
-        />
-      </button>
+      <div className="news-card__bookmark-container">
+        {!isloggedin && (
+          <span className="news__card-warn">Sign in to save articles</span>
+        )}
 
+        <button
+          className="news-card__bookmark"
+          type="button"
+          onClick={isloggedin ? handleBookmarkClick : handleLoginClick}
+        >
+          <img
+            src={isSaved ? bookmarkClicked : bookmarkIcon}
+            alt="Save article"
+          />
+        </button>
+      </div>
       <div className="news-card__content">
         <p className="news-card__date">{formatDate(publishedAt)}</p>
         <h3 className="news-card__title">{title}</h3>
