@@ -1,7 +1,8 @@
 .about {
-  background: #fff;
   width: 100%;
-  padding: 80px 104px 40px;
+  padding: 80px 104px;
+  background-color: #fff;
+  box-sizing: border-box;
 }
 
 .about__container {
@@ -37,6 +38,7 @@
   font-size: 40px;
   font-weight: 400;
   line-height: 46px;
+  color: #1a1b22;
 }
 
 .about__text {
@@ -45,4 +47,71 @@
   font-size: 18px;
   line-height: 30px;
   color: #1a1b22;
+}
+
+/* Tablet */
+
+@media screen and (max-width: 768px) {
+  .about {
+    padding: 40px;
+  }
+
+  .about__container {
+    flex-direction: column;
+    align-items: center;
+    gap: 32px;
+  }
+
+  .about__image-container {
+    width: 232px;
+    height: 232px;
+  }
+
+  .about__content {
+    max-width: 100%;
+  }
+
+  .about__title {
+    margin-bottom: 16px;
+    font-size: 30px;
+    line-height: 40px;
+  }
+
+  .about__text {
+    font-size: 18px;
+    line-height: 24px;
+  }
+}
+
+/* Mobile */
+
+@media screen and (max-width: 480px) {
+  .about {
+    padding: 32px 16px;
+  }
+
+  .about__container {
+    gap: 24px;
+    align-items: flex-start;
+  }
+
+  .about__image-container {
+    width: 272px;
+    height: 272px;
+    align-self: center;
+  }
+
+  .about__content {
+    width: 100%;
+  }
+
+  .about__title {
+    font-size: 30px;
+    line-height: 40px;
+  }
+
+  .about__text {
+    font-size: 18px;
+    line-height: 24px;
+  }
 }

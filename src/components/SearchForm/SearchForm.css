@@ -34,3 +34,14 @@
 .search__form-btn:hover {
   background: #347eff;
 }
+
+@media (max-width: 480px) {
+  .search-form {
+    flex-direction: column;
+  }
+
+  .search-form__input,
+  .search-form__button {
+    width: 100%;
+  }
+}

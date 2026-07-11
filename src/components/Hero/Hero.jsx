@@ -2,13 +2,7 @@ import "./Hero.css";
 import SearchForm from "../SearchForm/SearchForm";
 import Header from "../Header/Header";
 
-function Hero({
-  handleLoginClick,
-  onSearch,
-  isloggedin,
-  currentUser,
-  variant,
-}) {
+function Hero({ handleLoginClick, onSearch, isloggedin, currentUser }) {
   return (
     <section className="hero">
       <Header
