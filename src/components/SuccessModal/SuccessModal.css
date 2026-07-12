@@ -1,0 +1,13 @@
+.modal__alt-btn_type_success {
+  font-family: "Inter", Arial, sans-serif;
+  border: none;
+  background: transparent;
+  color: #2f71e5;
+  cursor: pointer;
+  padding: 0;
+  margin-right: 300px;
+  line-height: inherit;
+  color: #2f71e5;
+  font-size: 18px;
+  font-weight: 500;
+}
