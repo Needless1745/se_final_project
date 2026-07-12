@@ -5,12 +5,15 @@ const BASE_URL = "https://newsapi.org/v2/everything";
 export function getNews(query) {
   return fetch(
     `${BASE_URL}?q=${query}&apiKey=${NEWS_API_KEY}&pageSize=100`,
-  ).then((res) => {
+  ).then(async (res) => {
+    const data = await res.json();
+
     if (!res.ok) {
-      return Promise.reject(`Error: ${res.status}`);
+      console.log(data);
+      return Promise.reject(data);
     }
 
-    return res.json();
+    return data;
   });
 }
 
