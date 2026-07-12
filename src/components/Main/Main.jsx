@@ -12,6 +12,9 @@ function Main({
   handleShowMore,
   isloggedin,
   currentUser,
+  savedArticles,
+  handleDeleteArticle,
+  handleSaveArticle,
 }) {
   return (
     <main className="main">
@@ -31,6 +34,9 @@ function Main({
           onShowMore={handleShowMore}
           isloggedin={isloggedin}
           handleLoginClick={handleLoginClick}
+          savedArticles={savedArticles}
+          handleDeleteArticle={handleDeleteArticle}
+          handleSaveArticle={handleSaveArticle}
         />
       )}
     </main>

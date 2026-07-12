@@ -4,7 +4,13 @@ import logoutWhite from "../../assets/logoutW.svg";
 import logoutBlack from "../../assets/logoutBlack.svg";
 import { Link } from "react-router-dom";
 
-function Header({ isloggedin, currentUser, handleLoginClick, variant }) {
+function Header({
+  isloggedin,
+  currentUser,
+  handleLoginClick,
+  variant,
+  handleLogout,
+}) {
   return (
     <header className={`header ${variant === "saved" ? "header_saved" : ""}`}>
       <Link
@@ -32,8 +38,13 @@ function Header({ isloggedin, currentUser, handleLoginClick, variant }) {
               Saved articles
             </Link>
 
-            <button className="logout__btn" type="button">
+            <button
+              className="logout__btn"
+              type="button"
+              onClick={handleLogout}
+            >
               {currentUser?.name || "Elise"}
+
               <img
                 src={variant === "saved" ? logoutBlack : logoutWhite}
                 alt=""

@@ -1,6 +1,6 @@
 import "./App.css";
 import { useState } from "react";
-import { Route, Routes } from "react-router-dom";
+import { Route, Routes, useNavigate } from "react-router-dom";
 
 import Main from "../Main/Main";
 import About from "../About/About";
@@ -14,11 +14,14 @@ import Footer from "../Footer/Footer";
 function App() {
   const [activeModal, setActiveModal] = useState("");
   const [articles, setArticles] = useState([]);
+  const [savedArticles, setSavedArticles] = useState([]);
+  const [isSaved, setIsSaved] = useState(false);
   const [visibleCards, setVisibleCards] = useState(3);
   const [isLoading, setIsLoading] = useState(false);
   const [isloggedin, setisloggedin] = useState(false);
   const [currentUser, setCurrentUser] = useState({});
   const closeActiveModal = () => setActiveModal("");
+  const navigate = useNavigate();
 
   function handleSearch(query) {
     setVisibleCards(3);
@@ -68,6 +71,33 @@ function App() {
     setActiveModal("login");
   };
 
+  function handleSaveArticle(article) {
+    setSavedArticles((prev) => {
+      const alreadySaved = prev.some((saved) => saved.url === article.url);
+
+      if (alreadySaved) {
+        return prev;
+      }
+
+      return [...prev, article];
+    });
+  }
+
+  function handleDeleteArticle(article) {
+    setSavedArticles((prev) =>
+      prev.filter((saved) => saved.url !== article.url),
+    );
+  }
+
+  function handleLogout() {
+    console.log("logging out...");
+    setisloggedin(false);
+    setCurrentUser({});
+    setSavedArticles([]);
+    setIsSaved(false);
+    navigate("/");
+  }
+
   return (
     <div className="page">
       <div className="page__content">
@@ -85,6 +115,10 @@ function App() {
                   handleShowMore={handleShowMore}
                   isloggedin={isloggedin}
                   currentUser={currentUser}
+                  savedArticles={savedArticles}
+                  handleDeleteArticle={handleDeleteArticle}
+                  handleSaveArticle={handleSaveArticle}
+                  handleLogout={handleLogout}
                 />
                 <About />
               </>
@@ -96,7 +130,12 @@ function App() {
               <SavedNews
                 isloggedin={isloggedin}
                 currentUser={currentUser}
+                savedArticles={savedArticles}
+                onSaveArticle={handleSaveArticle}
+                onDeleteArticle={handleDeleteArticle}
                 handleLoginClick={handleLoginClick}
+                handleLogout={handleLogout}
+                isSaved={isSaved}
               />
             }
           />

@@ -7,6 +7,9 @@ function SearchResults({
   onShowMore,
   isloggedin,
   handleLoginClick,
+  savedArticles,
+  handleDeleteArticle,
+  handleSaveArticle,
 }) {
   return (
     <section className="search-results">
@@ -17,6 +20,9 @@ function SearchResults({
             <NewsCard
               key={article.url}
               {...article}
+              isSaved={savedArticles.some((saved) => saved.url === article.url)}
+              onSaveArticle={() => handleSaveArticle(article)}
+              onDeleteArticle={() => handleDeleteArticle(article)}
               isloggedin={isloggedin}
               handleLoginClick={handleLoginClick}
             />

@@ -1,5 +1,4 @@
 import "./NewsCard.css";
-import { useState } from "react";
 import { formatDate } from "../../utils/dateFormat";
 import bookmarkIcon from "../../assets/bookmark__icon.png";
 import bookmarkClicked from "../../assets/bookmark__marked.png";
@@ -13,10 +12,17 @@ function NewsCard({
   source,
   isloggedin,
   handleLoginClick,
+  isSaved,
+  onSaveArticle,
+  onDeleteArticle,
 }) {
-  const [isSaved, setIsSaved] = useState(false);
-
-  const handleBookmarkClick = () => setIsSaved((prev) => !prev);
+  function handleBookmarkClick() {
+    if (isSaved) {
+      onDeleteArticle();
+    } else {
+      onSaveArticle();
+    }
+  }
   return (
     <article className="news-card">
       <a
@@ -32,7 +38,6 @@ function NewsCard({
         {!isloggedin && (
           <span className="news__card-warn">Sign in to save articles</span>
         )}
-
         <button
           className="news-card__bookmark"
           type="button"

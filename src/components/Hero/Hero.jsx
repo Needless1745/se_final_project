@@ -2,7 +2,13 @@ import "./Hero.css";
 import SearchForm from "../SearchForm/SearchForm";
 import Header from "../Header/Header";
 
-function Hero({ handleLoginClick, onSearch, isloggedin, currentUser }) {
+function Hero({
+  handleLoginClick,
+  onSearch,
+  isloggedin,
+  currentUser,
+  handleLogout,
+}) {
   return (
     <section className="hero">
       <Header
@@ -10,6 +16,7 @@ function Hero({ handleLoginClick, onSearch, isloggedin, currentUser }) {
         handleLoginClick={handleLoginClick}
         isloggedin={isloggedin}
         currentUser={currentUser}
+        handleLogout={handleLogout}
       />
       <div className="hero__content">
         <h1 className="hero__title">What&apos;s going on in the world?</h1>
